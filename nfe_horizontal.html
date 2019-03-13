@@ -1,0 +1,736 @@
+﻿<!-- Header -->
+<style type="text/css">
+    @media print {
+        footer {
+            page-break-after: always;
+        }
+    }
+
+    * {
+        margin: 0;
+    }
+
+    .ui-widget-content {
+        border: none !important;
+    }
+
+    .page {
+        width: 291mm;
+        position: relative;
+        font-family: "Times New Roman", serif;
+        color: #000;
+        margin: 0 auto;
+        padding-left: 21mm;
+        box-sizing: border-box;
+    }
+
+        .page .mainArea td p {
+            font-family: "Times New Roman", serif;
+            font-size: 7pt;
+            line-height: 1.2em;
+            color: #000;
+        }
+    /* == TABELA == */
+    h2,
+    h3 {
+        font-family: "Times New Roman", serif;
+        color: #000;
+        font-size: 6pt;
+        line-height: 1.2em;
+    }
+
+    .nf-label {
+        font-size: 5pt;
+        display: block;
+        color: #000;
+    }
+
+    .nf-info {
+        font-weight: bold;
+        font-size: 8pt;
+    }
+
+    .txt-upper {
+        text-transform: uppercase;
+    }
+
+    table {
+        font-family: "Times New Roman", serif;
+        color: #000;
+        font-size: 7pt;
+        line-height: 1.2em;
+        border-collapse: collapse;
+        width: 100%;
+        border-color: #000;
+        table-layout: fixed;
+        padding: auto;
+    }
+
+    .no-top {
+        margin-top: -1px;
+    }
+
+    .mt-table {
+        margin-top: 3px;
+    }
+
+    td {
+        vertical-align: top;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-color: #000;
+        padding: 1px;
+    }
+
+    .entradaSaida {
+        width: 40%;
+        margin: 1mm auto;
+    }
+
+        .entradaSaida .legenda {
+            text-align: left;
+            margin-left: 2mm;
+            display: block;
+        }
+
+            .entradaSaida .legenda span {
+                display: block;
+            }
+
+    .box-number {
+        float: right;
+        border: 1px solid black;
+        width: 5mm;
+        height: 5mm;
+        text-align: center;
+        padding-top: 0;
+        line-height: 5mm;
+    }
+
+    .hr-dashed {
+        border-top: 1px dashed #000;
+        margin: 6px 0 4px;
+    }
+
+    .client_logo {
+        height: 27.5mm;
+        width: 28mm;
+        margin: 0.5mm;
+        display: block;
+    }
+
+    .title {
+        font-size: 10pt;
+        margin-bottom: 1mm;
+    }
+
+    .txtc {
+        text-align: center;
+    }
+
+    .pd-0 {
+        padding: 0;
+    }
+
+    .mb2 {
+        margin-bottom: 2mm;
+    }
+
+    .content-spacer {
+        display: block;
+        min-height: 10px;
+    }
+
+    .rotate-area .content-spacer {
+        height: 20px;
+    }
+
+    .black-label {
+        background-color: #000;
+        color: #fff;
+        width: 5.8mm;
+        position: relative;
+        font-size: 5.5pt;
+    }
+
+        .black-label span {
+            transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            display: block;
+            position: absolute;
+            top: 28px;
+            left: -16px;
+            line-height: 1.2em;
+        }
+
+        .black-label .fatura {
+            top: 11px;
+            left: -3px;
+        }
+
+        .black-label .calculo {
+            top: 18px;
+            left: -4px;
+        }
+
+        .black-label .produto {
+            white-space: nowrap;
+            left: -54px;
+            top: 115px;
+        }
+
+    .line-1 .black-label .produto {
+        left: -54px;
+        top: 92px;
+    }
+
+    .line-1 .product-list {
+        min-height: 63mm;
+    }
+
+    .line-2 .black-label .produto {
+        left: -54px;
+        top: 72px;
+    }
+
+    .line-2 .product-list {
+        height: 51mm;
+    }
+
+    .line-3 .black-label .produto {
+        left: -54px;
+        top: 72px;
+    }
+
+    .line-3 .product-list {
+        height: 43mm;
+    }
+
+    .rotate-area {
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        position: absolute;
+        left: -323px;
+        top: 324px;
+        width: 192mm;
+    }
+
+        .rotate-area table {
+            table-layout: auto;
+            width: 192mm;
+        }
+
+    .small {
+        font-size: 5pt;
+        line-height: 1.2em;
+        display: block;
+    }
+
+    .chave-acesso {
+        margin: 0 1mm 2mm;
+        border: 1px solid #000;
+        border-radius: 3px;
+        padding: 2px;
+    }
+
+    .product-list {
+        height: 54mm;
+    }
+
+        .product-list td {
+            font-size: 6pt;
+            line-height: 1.2em;
+        }
+
+    .nfeArea .imgCanceled {
+        position: absolute;
+        top: 55mm;
+        left: 85mm;
+        z-index: 3;
+        opacity: 0.8;
+        display: none;
+    }
+
+    .nfeArea.invoiceCanceled .imgCanceled {
+        display: block;
+    }
+
+    .nfeArea .imgNull {
+        position: absolute;
+        top: 45mm;
+        left: 75mm;
+        z-index: 3;
+        opacity: 0.8;
+        display: none;
+    }
+
+    .nfeArea.invoiceNull .imgNull {
+        display: block;
+    }
+
+    .nfeArea.invoiceCancelNull .imgCanceled {
+        top: 69mm;
+        left: 95mm;
+        display: block;
+    }
+
+    .nfeArea.invoiceCancelNull .imgNull {
+        top: 40mm;
+        left: 70mm;
+        display: block;
+    }
+
+    .fatura-box td {
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        font-size: 6pt;
+        line-height: 1em;
+    }
+
+    .fatura-box span {
+        display: block;
+    }
+
+    .fatura-box tr:last-child td {
+        border-bottom: none;
+    }
+
+    .fatura-box tr td:nth-child(10) {
+        border-right: none;
+    }
+
+    .label-mktup {
+        font-family: Arial !important;
+        font-size: 8px !important;
+        padding-top: 8px !important;
+    }
+
+    @media screen {
+        .page {
+            -webkit-transform: scale(.90);
+            -webkit-transform-origin: 0 -54px;
+        }
+
+            .page td {
+                padding: 1px;
+            }
+    }
+
+    @media print {
+        .page-break {
+            display: block;
+            page-break-after: always;
+        }
+    }
+</style>
+<!-- /Header -->
+<!-- Recebimentos -->
+<div class="page nfeArea">
+    <img class="imgCanceled" src="tarja_nf_cancelada.png" alt="" />
+    <img class="imgNull" src="tarja_nf_semvalidade.png" alt="" />
+    <div class="rotate-area">
+        <table cellpadding="0" cellspacing="0" border="1">
+            <tr>
+                <td colspan="2" style="height: 8mm;">
+                    RECEBEMOS DE&nbsp;<span style="font-size: 8px; font-family: 'Courier New';">[ds_company_issuer_name]</span>&nbsp;OS PRODUTOS E/OU SERVIÇOS CONSTANTES
+                    <br>
+                    NA NOTA FISCAL INDICADA AO LADO.
+                </td>
+                <td rowspan="2" style="width: 18mm;">
+                    Nº <span>[nl_invoice]</span>
+                    <br>
+                    Série: <span>[ds_invoice_serie]</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="field receiveDate" style="height: 8mm; width: 36.8mm;">
+                    DATA DE RECEBIMENTO
+                    <div class="content-spacer"></div>
+                </td>
+                <td class="field receiveIdentity">
+                    IDENTIFICAÇÃO E ASSINATURA DO RECEBEDOR
+                </td>
+            </tr>
+        </table>
+        <hr class="hr-dashed" />
+    </div>
+    <div class="mainArea">
+        <table cellpadding="0" cellspacing="0" border="1">
+            <tr>
+                <td style="width: 31mm;">
+                    <img class="client_logo" src="[url_logo]" onerror=" javascript:this.src='data:image/png;base64,"/>
+                </td>
+                <td class="field companyInfo">
+                    <h3 class="name">
+                        <span>[ds_company_issuer_name]</span>
+                    </h3>
+                    <h3 class="info">
+                        <span>[ds_company_address]</span>,
+                        <span>[ds_company_neighborhood]</span>
+                        <br />
+                        <span>[nu_company_cep]</span>
+                        <span>[ds_company_city_name]</span>&nbsp;-
+                        <span>[ds_company_uf]</span>
+                        <br />
+                        <span>[nl_company_phone_number]</span>
+                    </h3>
+                </td>
+                <td class="txtc txt-upper" style="width: 71.2mm;">
+                    <h3 class="title">
+                        DANFE
+                    </h3>
+                    <p>
+                        Documento auxiliar da
+                        <br />
+                        Nota Fiscal Eletrônica
+                        <br />
+                    </p>
+                    <p class="entradaSaida">
+                        <span class="box-number">[ds_code_operation_type]</span>
+                        <span class="legenda">
+                            <span>0 - Entrada</span>
+                            <span>1 - Saída</span>
+                        </span>
+                    </p>
+                    <p class="sub">
+                        Nº
+                        <span>[nl_invoice]</span>
+                        <br />
+                        SÉRIE:
+                        <span>[ds_invoice_serie]</span>
+                        <br />
+                        Página <span>[actual_page]</span> de <span>[total_pages]</span>
+                        <br />
+                    </p>
+                </td>
+                <td style="width: 96.5mm;">
+                    <h3 class="header">
+                        CONTROLE DO FISCO
+                    </h3>
+                    <p class="codigo txtc" style="height: 9mm; padding-top: 5px;">{BarCode}</p>
+                    <div class="field acessKey">
+                        <div class="chave-acesso">
+                            CHAVE DE ACESSO
+                            <p class="txtc">[ds_danfe]</p>
+                        </div>
+                        <p class="txtc">[text_consult_nfe]</p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="1" class="no-top">
+            <tr>
+                <td colspan="2">
+                    <span class="nf-label">NATUREZA DA OPERAÇÃO</span>
+                    <span class="nf-info content-spacer">[_ds_transaction_nature]</span>
+                </td>
+                <td style="width: 86mm;">
+                    <span class="nf-label">[protocol_label]</span>
+                    <span class="nf-info">[ds_protocol]</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="nf-label">INSCRIÇÃO ESTADUAL</span>
+                    <span class="nf-info content-spacer">[nl_company_ie]</span>
+                </td>
+                <td style="width: 90.5mm;">
+                    <span class="nf-label">INSCRIÇÃO ESTADUAL DO SUBST. TRIB.</span>
+                    <span class="nf-info">[nl_company_ie_st]</span>
+                </td>
+                <td>
+                    <span class="nf-label">CNPJ</span>
+                    <span class="nf-info">[nl_company_cnpj_cpf]</span>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="1" class="no-top">
+            <tr>
+                <td rowspan="3" class="black-label">
+                    <span>
+                        DESTINATÁRIO/<br />
+                        REMETENTE
+                    </span>
+                </td>
+                <td colspan="3">
+                    <span class="nf-label">NOME/RAZÃO SOCIAL</span>
+                    <span class="nf-info content-spacer">[ds_client_receiver_name]</span>
+                </td>
+                <td style="width: 40mm;">
+                    <span class="nf-label">CNPJ/CPF</span>
+                    <span class="nf-info">[nl_client_cnpj_cpf]</span>
+                </td>
+                <td style="width: 35mm;">
+                    <span class="nf-label">
+                        DATA DE EMISSÃO</spanh3>
+                        <span class="nf-info">[dt_invoice_issue]</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="nf-label">ENDEREÇO</span>
+                    <span class="nf-info">[ds_client_address]</span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">BAIRRO/DISTRITO</span>
+                    <span class="nf-info content-spacer">[ds_client_neighborhood]</span>
+                </td>
+                <td style="width: 40mm;">
+                    <span class="nf-label">CEP</span>
+                    <span class="nf-info">[nu_client_cep]</span>
+                </td>
+                <td style="width: 35mm;">
+                    <span class="nf-label">DATA ENTR./SAÍDA</span>
+                    <span class="nf-info">[dt_input_output]</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span class="nf-label">MUNICÍPIO</span>
+                    <span class="nf-info content-spacer">[ds_client_city_name]</span>
+                </td>
+                <td class=" phone">
+                    <span class="nf-label">FONE/FAX</span>
+                    <span class="nf-info">[nl_client_phone_number]</span>
+                </td>
+                <td>
+                    <span class="nf-label">UF</span>
+                    <span class="nf-info">[ds_client_uf]</span>
+                </td>
+                <td>
+                    <span class="nf-label">INSCRIÇÃO ESTADUAL</span>
+                    <span class="nf-info">[ds_client_ie]</span>
+                </td>
+                <td>
+                    <span class="nf-label">HORA ENTR./SAÍDA</span>
+                    <span class="nf-info">[hr_input_output]</span>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3" class="black-label">
+                    <span class="fatura">
+                        FATURA
+                    </span>
+                </td>
+                <td colspan="5" class="fatura-box">
+                    [duplicates]
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="1" class="no-top">
+            <tr>
+                <td rowspan="2" class="black-label">
+                    <span class="calculo">
+                        CÁLCULO<br>
+                        IMPOSTO
+                    </span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">BASE DE CÁLCULO DO ICMS</span>
+                    <span class="nf-info content-spacer">[tot_bc_icms]</span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">VALOR DO ICMS</span>
+                    <span class="nf-info">[tot_icms]</span>
+                </td>
+                <td class=" baseCalcIcmsSt">
+                    <span class="nf-label">BASE DE CÁLCULO DO ICMS ST</span>
+                    <span class="nf-info">[tot_bc_icms_st]</span>
+                </td>
+                <td class="valIcmsSt">
+                    <span class="nf-label">VALOR DO ICMS ST</span>
+                    <span class="nf-info">[tot_icms_st]</span>
+                </td>
+                <td>
+                    <span class="nf-label">VALOR DO FCP</span>
+                    <span class="nf-info">[tot_icms_fcp]</span>
+                </td>
+                <td class=" valProduct">
+                    <span class="nf-label">VALOR TOTAL DE PRODUTOS</span>
+                    <span class="nf-info">[tot_product]</span>
+                </td>
+            </tr>
+            <tr>
+                <td class=" valTrib">
+                    <span class="nf-label">VALOR APROX. DOS TRIBUTOS</span>
+                    <span class="nf-info content-spacer">{ApproximateTax}</span>
+                </td>
+                <td class=" valShipp">
+                    <span class="nf-label">VALOR DO FRETE</span>
+                    <span class="nf-info">[vl_shipping]</span>
+                </td>
+                <td class=" valSafe">
+                    <span class="nf-label">VALOR DO SEGURO</span>
+                    <span class="nf-info">[vl_insurance]</span>
+                </td>
+                <td class=" discount">
+                    <span class="nf-label">DESCONTO</span>
+                    <span class="nf-info">[vl_discount]</span>
+                </td>
+                <td class=" valOther">
+                    <span class="nf-label">OUTRAS DESP. ACESSÓRIAS</span>
+                    <span class="nf-info">[vl_other_expense]</span>
+                </td>
+                <td class=" valIpi">
+                    <span class="nf-label">VALOR DO IPI</span>
+                    <span class="nf-info">[tot_total_ipi_tax]</span>
+                </td>
+                <td class=" valNote">
+                    <span class="nf-label">VALOR TOTAL DA NOTA</span>
+                    <span class="nf-info">[vl_total]</span>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="1" class="no-top">
+            <tr>
+                <td rowspan="3" class="black-label">
+                    <span class="transportados">
+                        TRANS/VOLUMES<br />
+                        TRANSPORTADOS
+                    </span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">RAZÃO SOCIAL</span>
+                    <span class="nf-info">[ds_transport_carrier_name]</span>
+                </td>
+                <td class=" shippAccount">
+                    <span class="nf-label">FRETE POR CONTA</span>
+                    <span class="box-number" style="margin-top: -7px;">[ds_transport_code_shipping_type]</span>
+                    <span class="small">
+                        0 - Emitente<br>
+                        1 - Destinatário/Remetente
+                    </span>
+                </td>
+                <td class=" codAntt">
+                    <span class="nf-label">CÓDIGO ANTT</span>
+                    <span class="nf-info content-spacer">[ds_transport_rntc]</span>
+                </td>
+                <td class=" plaque">
+                    <span class="nf-label">PLACA</span>
+                    <span class="nf-info">[ds_transport_vehicle_plate]</span>
+                </td>
+                <td class=" uf">
+                    <span class="nf-label">UF</span>
+                    <span class="nf-info">[ds_transport_vehicle_uf]</span>
+                </td>
+                <td class=" cnpj">
+                    <span class="nf-label">CNPJ/CPF</span>
+                    <span class="nf-info">[nl_transport_cnpj_cpf]</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span class="nf-label">ENDEREÇO</span>
+                    <span class="nf-info">[ds_transport_address]</span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">MUNICÍPIO</span>
+                    <span class="nf-info">[ds_transport_city]</span>
+                </td>
+                <td class=" uft">
+                    <span class="nf-label">UF</span>
+                    <span class="nf-info content-spacer">[ds_transport_uf]</span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">INSC. ESTADUAL</span>
+                    <span class="nf-info">[ds_transport_ie]</span>
+                </td>
+            </tr>
+            <tr>
+                <td class=" amount">
+                    <span class="nf-label">QUANTIDADE</span>
+                    <span class="nf-info content-spacer">[nu_transport_amount_transported_volumes]</span>
+                </td>
+                <td class=" sort">
+                    <span class="nf-label">ESPÉCIE</span>
+                    <span class="nf-info">[ds_transport_type_volumes_transported]</span>
+                </td>
+                <td class=" brand">
+                    <span class="nf-label">MARCA</span>
+                    <span class="nf-info">[ds_transport_mark_volumes_transported]</span>
+                </td>
+                <td class=" number">
+                    <span class="nf-label">NUMERAÇÃO</span>
+                    <span class="nf-info">[ds_transport_number_volumes_transported]</span>
+                </td>
+                <td class=" grossWeight">
+                    <span class="nf-label">PESO BRUTO</span>
+                    <span class="nf-info">[vl_transport_gross_weight]</span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">PESO LÍQUIDO</span>
+                    <span class="nf-info">[vl_transport_net_weight]</span>
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="1" class="no-top product-list">
+            <tr>
+                <td class="black-label">
+                    <span class="produto">DADOS DO PRODUTO / SERVIÇO</span>
+                </td>
+                <td>
+                    <table class="table" id="table" cellpadding="0" cellspacing="0" border="1">
+                        <tr>
+                            <td class="cod" style="width: 20mm;">CÓDIGO</td>
+                            <td class="descrit" style="width: 75mm;">DESCRIÇÃO DO PRODUTO/SERVIÇO</td>
+                            <td class="ncmsh ">NCMSH</td>
+                            <td class="cst">CST</td>
+                            <td class="cfop">CFOP</td>
+                            <td class="un">UN</td>
+                            <td class="amount">QTD.</td>
+                            <td class="valUnit">VLR.UNIT.</td>
+                            <td class="valTotal">VLR.TOTAL</td>
+                            <td class="bcIcms">BCICMS</td>
+                            <td class="valIcms">VLR.ICMS</td>
+                            <td class="valIpi">VLR.IPI</td>
+                            <td class="aliqIcms">ALIQ.ICMS</td>
+                            <td class="aliqIpi">ALIQ.IPI</td>
+                        </tr>
+                        [items]
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table class="no-top" cellpadding="0" cellspacing="0" border="1">
+            <tr>
+                <td class="regState">
+                    <span class="nf-label">INSCRIÇÃO MUNICIPAL</span>
+                    <span class="nf-info content-spacer">[ds_company_im]</span>
+                </td>
+                <td class="valTotalServices">
+                    <span class="nf-label">VALOR TOTAL DOS SERVIÇOS</span>
+                    <span class="nf-info">[vl_total_serv]</span>
+                </td>
+                <td class="baseCalcIssqn">
+                    <span class="nf-label">BASE DE CÁLCULO DO ISSQN</span>
+                    <span class="nf-info">[tot_bc_issqn]</span>
+                </td>
+                <td class="valIssqn">
+                    <span class="nf-label">VALOR DO ISSQN</span>
+                    <span class="nf-info">[tot_issqn]</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 22.5mm;">
+                    <span class="nf-label">INFORMAÇÕES COMPLEMENTARES</span>
+                    <span>[ds_additional_information]</span>
+                </td>
+                <td colspan="2">
+                    <span class="nf-label">RESERVA AO FISCO</span>
+                    <span></span>
+                </td>
+            </tr>
+        </table>
+
+        <footer>
+            <table cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+						<td style="text-align: right"><strong>Empresa de Software www.empresa.com</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </footer>
+    </div>
+    [page-break]
+</div>
