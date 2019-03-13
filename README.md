@@ -1,5 +1,5 @@
 # template-nfe
-Templates dos documentos fiscais NFe, NFCe e NFSe em HTML
+Templates dos documentos fiscais NFe (Nota fiscal eletrônica), NFCe (Nota fiscal de consumidor eletrônica) e NFSe (Nota fiscal de servicço eletrônica) em HTML.
 
 ## Como usar
 
